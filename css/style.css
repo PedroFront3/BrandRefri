@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.item {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: var(--background);
+}
+
+.item.active {
+  display: block;
+}
+
+.item .title {
+  font-size: 10rem;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.item .fruit {
+  width: 90%;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+}
+
+.item .refri {
+  width: 600px;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#prev, #next {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(238, 238, 238, 0.6);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(238, 238, 238, 0.6);
+  color: #eee;
+  font-size: x-large;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 4;
+}
+
+#prev {
+  left: 30px;
+  transition: 1.5s;
+}
+
+#prev:hover {
+  background-color: rgba(250, 250, 250, 0.623);
+}
+
+#next {
+  right: 30px;
+  transition: 1.5s;
+}
+
+#next:hover {
+  background-color: rgba(250, 250, 250, 0.623);
+}
+
+@keyframes toActive {
+  from {
+    top: 100%;
+    opacity: 0;
+  }
+}
+.item.active img.fruit {
+  animation: toActive 0.5s ease-in-out 1;
+}
+
+.item.active .title {
+  animation: toActive 0.5s ease-in-out 1;
+}
+
+@media screen and (max-width: 972px) {
+  .item .title {
+    font-size: 3.9rem;
+  }
+}/*# sourceMappingURL=style.css.map */
